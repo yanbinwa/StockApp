@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/StockXMLSchema" xmlns:tns="http://www.example.org/StockXMLSchema" elementFormDefault="qualified">
+    
+    <complexType name="StockDataType"> 
+	</complexType>
+
+    <complexType name="StockId">
+    	<complexContent>
+    		<extension base="tns:StockDataType">		
+    			<sequence>
+    				<element name="id" type="string"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockMarketId">
+    	<complexContent>
+    		<extension base="tns:StockDataType">		
+    			<sequence>
+    				<element name="marketName" type="string"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="StockData">
+		<complexContent>
+			<extension base="tns:StockDataType">
+				<sequence>
+					<element name="name" type="string"/>
+					<element name="code" type="string"/>
+					<element name="date" type="string"/>
+					<element name="time" type="string"/>
+					<element name="openningPrice" type="float"/>
+					<element name="closingPrice" type="float"/>
+					<element name="currentPrice" type="float"/>
+					<element name="hprice" type="float"/>
+					<element name="lprice" type="float"/>
+					<element name="competitivePrice" type="float"/>
+					<element name="auctionPrice" type="float"/>
+					<element name="totalNumber" type="int"/>
+					<element name="turnover" type="float"/>
+					<element name="increase" type="float"/>
+					<element name="buyOne" type="int"/>
+					<element name="buyOnePrice" type="float"/>
+					<element name="buyTwo" type="int"/>
+					<element name="buyTwoPrice" type="float"/>
+					<element name="buyThree" type="int"/>
+					<element name="buyThreePrice" type="float"/>
+					<element name="buyFour" type="int"/>
+					<element name="buyFourPrice" type="float"/>
+					<element name="buyFive" type="int"/>
+					<element name="buyFivePrice" type="float"/>
+					<element name="sellOne" type="int"/>
+					<element name="sellOnePrice" type="float"/>
+					<element name="sellTwo" type="int"/>
+					<element name="sellTwoPrice" type="float"/>
+					<element name="sellThree" type="int"/>
+					<element name="sellThreePrice" type="float"/>
+					<element name="sellFour" type="int"/>
+					<element name="sellFourPrice" type="float"/>
+					<element name="sellFive" type="int"/>
+					<element name="sellFivePrice" type="float"/>
+					<element name="minurl" type="string"/>
+					<element name="dayurl" type="string"/>
+					<element name="weekurl" type="string"/>	
+					<element name="monthurl" type="string"/>  
+    			</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+    <complexType name="StockHandicapData">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+					<element name="outSize" type="int"/>
+					<element name="inSize" type="int"/>
+					<element name="exchangeRatio" type="float"/>
+					<element name="priceEaringRatio" type="float"/>
+					<element name="priceToBookRatio" type="float"/>
+					<element name="swing" type="float"/>
+					<element name="circulatedMarket" type="float"/>
+					<element name="totalMarket" type="float"/>
+					<element name="mainFlowIn" type="float"/>
+					<element name="mainFlowOut" type="float"/>
+					<element name="netMainFlowIn" type="float"/>
+					<element name="netMainFlowInRatio" type="float"/>
+					<element name="retailFlowIn" type="float"/>
+					<element name="retailFlowOut" type="float"/>
+					<element name="netRetailFlowIn" type="float"/>
+					<element name="netRetailFlowInRatio" type="float"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockMarketInfo">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+					<element name="name" type="string"/>
+					<element name="curdot" type="float"/>
+					<element name="curprice" type="float"/>
+					<element name="rate" type="float"/>
+					<element name="dealnumber" type="int"/>
+					<element name="turnover" type="float"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockDataOutput">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+					<element name="timestamp" type="long"/>
+					<element name="date" type="string"/>
+					<element name="time" type="string"/>
+					<element name="currentPrice" type="float"/>
+					<element name="increase" type="float"/>
+					<element name="startPrice" type="float"/>
+					<element name="endPrice" type="float"/>
+					<element name="totalNumber" type="int"/>
+					<element name="turnover" type="float"/>
+					<element name="hprice" type="float"/>
+					<element name="lprice" type="float"/>
+					<element name="outSize" type="int"/>
+					<element name="inSize" type="int"/>
+					<element name="swing" type="float"/>
+					<element name="mainFlowIn" type="float"/>
+					<element name="mainFlowOut" type="float"/>
+					<element name="netMainFlowIn" type="float"/>
+					<element name="netMainFlowInRatio" type="float"/>
+					<element name="retailFlowIn" type="float"/>
+					<element name="retailFlowOut" type="float"/>
+					<element name="netRetailFlowIn" type="float"/>
+					<element name="netRetailFlowInRatio" type="float"/>
+					<element name="startTimestamp" type="long"/>
+					<element name="endTimestamp" type="long"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockMarketOutput">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+					<element name="timestamp" type="long"/>
+					<element name="date" type="string"/>
+					<element name="time" type="string"/>
+					<element name="curdot" type="float"/>
+					<element name="rate" type="float"/>
+					<element name="startDot" type="float"/>
+					<element name="endDot" type="float"/>
+					<element name="dealNumber" type="int"/>
+					<element name="turnover" type="float"/>
+					<element name="hdot" type="float"/>
+					<element name="ldot" type="float"/>
+					<element name="swing" type="float"/>
+					<element name="startTimestamp" type="long"/>
+					<element name="endTimestamp" type="long"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockQuery">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+					<element name="id" type="string"/>
+					<element name="startTimestamp" type="long"/>
+					<element name="endTimestamp" type="long"/>
+					<element name="interval" type="string"/>
+					<element name="type" type="string"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="StockQueryResult">
+    	<complexContent>
+    		<extension base="tns:StockDataType">
+    			<sequence>
+    				<element name="timestamp" type="long"/>
+					<element name="startPrice" type="float"/>
+					<element name="endPrice" type="float"/>
+					<element name="hprice" type="float"/>
+					<element name="lprice" type="float"/>
+					<element name="totalNumber" type="int"/>
+					<element name="mainFlowIn" type="float"/>
+					<element name="mainFlowOut" type="float"/>
+					<element name="retailFlowIn" type="float"/>
+					<element name="retailFlowOut" type="float"/>
+					<element name="outSize" type="int"/>
+					<element name="inSize" type="int"/>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+</schema>
